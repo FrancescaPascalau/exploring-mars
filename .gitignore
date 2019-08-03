@@ -1,0 +1,13 @@
+**/.idea
+**/*.iml
+
+**/local.properties
+
+**/.DS_Store
+
+**/build
+
+**/target
+**/captures
+
+**/.externalNativeBuild
