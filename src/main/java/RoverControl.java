@@ -15,7 +15,8 @@ public class RoverControl {
      * This is a static method that doesn't need an object to be called.
      * The input string inserted is split into a string array by the space between the characters.
      *
-     * @param nasaInstructions The input string inserted by NASA that specified the plateau size and the rover/s instructions.
+     * @param nasaInstructions The input string inserted by NASA that specified the plateau size and the rover/s
+     *                         instructions.
      * @return It returns the output string that contains the final position of the rover after exploration.
      */
     public static String roverControlOnMars(String nasaInstructions) {
@@ -29,7 +30,8 @@ public class RoverControl {
         try {
             plateauPosition = new Position(Integer.parseInt(inputs[0]), Integer.parseInt(inputs[1]));
         } catch (NumberFormatException e) {
-            throw new BadCoordinatesException("Expected integer values for the plateau's position. Retype position values from input!");
+            throw new BadCoordinatesException("Expected integer values for the plateau's position. Retype position " +
+                    "values from input!");
         }
 
         Plateau plateauMars = new Plateau(plateauPosition);
@@ -39,14 +41,16 @@ public class RoverControl {
         while (i < inputs.length) {
             /**
              * Creates the roverPosition by assuring that the position values are positive integers.
-             * It also checks if the input for the rover/s contains the position, the cardinal point and the instructions.
+             * It also checks if the input for the rover/s contains the position, the cardinal point and the
+             * instructions.
              */
             Position roverPosition;
             try {
                 try {
                     roverPosition = new Position(Integer.parseInt(inputs[i]), Integer.parseInt(inputs[i + 1]));
                 } catch (NumberFormatException e) {
-                    throw new BadCoordinatesException("Expected integer values for the rover's position. Retype position values from input!");
+                    throw new BadCoordinatesException("Expected integer values for the rover's position. Retype " +
+                            "position values from input!");
                 }
 
                 Rover rover = new Rover(roverPosition, Coordinates.valueOf(inputs[i + 2]), plateauMars);
@@ -56,7 +60,8 @@ public class RoverControl {
 
                 output += rover.toString();
             } catch (ArrayIndexOutOfBoundsException e) {
-                throw new BadInstructionException("Missing instructions for rover. Please tell the rover how to explore the plateau");
+                throw new BadInstructionException("Missing instructions for rover. Please tell the rover how to " +
+                        "explore the plateau");
             }
         }
         return output.trim();

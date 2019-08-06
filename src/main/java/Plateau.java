@@ -9,16 +9,17 @@ import java.util.Objects;
 
 public class Plateau {
 
-    private Position upperRight;
     private final Position lowerLeft = new Position(0, 0);
+    private Position upperRight;
 
     /**
-     *There is a condition on Plateau's constructor that doesn't allow to create a plateau object if the values of the
+     * There is a condition on Plateau's constructor that doesn't allow to create a plateau object if the values of the
      * upper-right corner are not positive numbers so we only use one quadrant of the Cartesian coordinate system.
      */
     Plateau(Position upperRight) {
         if (!(upperRight.getCoordinateX() > 0 && upperRight.getCoordinateY() > 0)) {
-            throw new BadCoordinatesException("The value of the upper right corner is negative. Retype new positive value.");
+            throw new BadCoordinatesException("The value of the upper right corner is negative. Retype new positive " +
+                    "value.");
         }
         this.upperRight = upperRight;
     }

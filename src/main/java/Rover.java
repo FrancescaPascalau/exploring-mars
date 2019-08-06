@@ -113,10 +113,11 @@ public class Rover {
     /**
      * This method takes the string input character by character and calls the right method for rover object
      * If the character is 'L' or 'R' it will call spin() method, if i is 'M' it calls move() method.
-     * It also calls the isRoverOutOfPlateau() method while moving to assure that the rover doesn't cross the edge of the plateau.
+     * It also calls the isRoverOutOfPlateau() method while moving to assure that the rover doesn't cross the edge of
+     * the plateau.
      * In case that the character is not defined it throws a BadInstructionException.
      *
-     * @param input The string input inserted by NASA that contains the instruction for the rover
+     * @param input   The string input inserted by NASA that contains the instruction for the rover
      * @param plateau The plateau where the rover is placed to explore
      */
     public void exploringMars(String input, Plateau plateau) {
@@ -129,7 +130,8 @@ public class Rover {
             } else if (action == 'M') {
                 this.move();
                 if (isRoverOutOfPlateau(plateau, roverPosition.getCoordinateX(), roverPosition.getCoordinateY())) {
-                    throw new BadInstructionException("The rover crossed the perimeter of the plateau. You had lost control of it.");
+                    throw new BadInstructionException("The rover crossed the perimeter of the plateau. You had lost " +
+                            "control of it.");
                 }
             } else {
                 throw new BadInstructionException("Instruction not defined. Insert a new valid action string!");
