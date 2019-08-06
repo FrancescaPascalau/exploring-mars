@@ -1,5 +1,11 @@
 import java.util.Objects;
 
+/**
+ * This class is used by plateau and rover objects to express their position on a cartesian coordinate system.
+ * Coordinate X represents a point on X-axis and coordinate Y a point on Y-axis.
+ * A point on the plane is composed by both values: (x-value, y-value).
+ */
+
 public class Position {
 
     private int coordinateX;
